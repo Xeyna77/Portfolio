@@ -1,0 +1,782 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a1a;
+    font-family: 'Inter', sans-serif;
+}
+
+header {
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #1a1a1a;
+    z-index: 1000;
+}
+
+.header-content {
+    max-width: 1400px;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: "Oi", serif;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    color: #cccccc;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #888888;
+}
+
+
+
+
+.banner {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 0.12) 0%,
+        rgba(0, 0, 0, 0) 70%
+    );
+}
+
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.welcome-text, .main-title, .subtitle {
+    transition: all 0.4s ease-out; 
+}
+
+.welcome-text {
+    font-size: 1.2rem;
+    color: #888888;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.main-title {
+    font-size: 5rem;
+    color: #cccccc;
+    font-weight: 800;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #cccccc;
+    margin-top: 20px;
+    max-width: 600px;
+    font-weight: 300;
+}
+
+/* --- EFFETS AU SURVOL (LOGIQUE BANNER-CONTENT) --- */
+
+/* On anime quand on survole TOUT le bloc central */
+.banner-content:hover .main-title {
+    transform: scale(1.7);
+    color: #ffffff;
+}
+
+.banner-content:hover .welcome-text {
+    transform: translateY(-20px);
+    color: #ffffff;
+}
+
+.banner-content:hover .subtitle {
+    transform: translateY(20px);
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+.projects {
+    min-height: 0vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1a1a;
+    margin: 0;
+    padding: 20px;
+}
+
+.card-container {
+    width: 70vw; 
+    height: 60vh;
+    perspective: 2000px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.card-container:hover .card {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: #000000;
+}
+
+/* --- MISE EN PAGE DE LA FACE AVANT (Nouveau) --- */
+.card-front {
+    display: flex; /* Active Flexbox pour aligner photo et texte */
+    align-items: center; /* Centre verticalement les éléments */
+    justify-content: space-between; /* Espace les deux blocs */
+    padding: 40px; /* Ajoute de l'espace intérieur */
+}
+
+/* Le Cadre de la Photo (Bloc de Gauche) */
+.photo-frame {
+    flex: 0 0 35%; /* La photo prend 35% de la largeur */
+    height: 100%; /* Prend toute la hauteur disponible */
+    border: 3px solid rgba(255, 255, 255, 0.5); /* Cadre visible */
+    border-radius: 10px;
+    overflow: hidden; /* Pour que la photo ne dépasse pas du cadre */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Petit effet lumineux */
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajuste l'image pour qu'elle remplisse le cadre sans se déformer */
+}
+
+/* Le Bloc de Texte (Bloc de Droite) */
+.text-content {
+    flex: 0 0 60%; /* Le texte prend 60% de la largeur */
+    color: #ffffff;
+    text-align: left; /* Aligne le texte à gauche */
+}
+
+.text-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.text-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+/* Style du Verso (déjà existant) */
+.card-back {
+    transform: rotateY(180deg);
+    padding: 20px;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+}
+
+.back-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.hobbies-mini-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colonnes */
+    gap: 10px;
+    height: 100%;
+}
+
+.hobby-mini-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Le 5ème élément prend toute la largeur pour équilibrer */
+.hobby-mini-item.wide {
+    grid-column: span 2;
+}
+
+.hobby-mini-item img {
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.hobby-mini-text h4 {
+    font-size: 1.6rem;
+    margin: 0;
+    color: #ffffff;
+}
+
+.hobby-mini-text p {
+    font-size: 0.8rem;
+    margin: 0;
+    color: #888888;
+}
+
+
+
+
+
+/* Correction pour supprimer les espaces entre sections si tu utilises un container */
+.container {
+    grid-gap: 0; 
+    padding: 0;
+}
+
+
+
+
+
+
+.container {
+    display: grid;
+    grid-template-rows: 80px auto 1fr auto 50 px;
+    grid-template-columns: 1fr 4fr 1fr;
+    height : 100vh;
+    grid-template-areas: 
+        "header"
+        "banner"
+        "main"
+        "low-content"
+        "footer";
+    grid-gap: 10px; padding: 10px;
+    font-weight: 600; font-size: 20px;
+}
+
+@media (max-width : 678px) {
+    .container {
+        grid-template-rows: 50px 50px 50px 1fr
+        50px 50px 50px;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "header"
+        "banner"
+        "main"
+        "low-content"
+        "footer";
+    }
+}
+
+
+
+
+
+
+
+
+.workspace {
+    min-height: 100vh;
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 5%;
+    overflow: hidden;
+}
+
+.workspace .section-title {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+.monitor-container {
+    position: relative;
+    width: 1000px;
+    height: 200px;
+}
+
+/* Lumière chaude derrière l'ordinateur */
+.warm-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 120, 0, 0.25) 0%, rgba(255, 80, 0, 0) 70%);
+    filter: blur(60px);
+    z-index: 0;
+}
+
+/* L'ordinateur (le moniteur) */
+.monitor {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border: 15px solid #1a1a1a; /* Cadre de l'écran */
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.8);
+    padding: 20px;
+}
+
+/* Bureau avec les dossiers */
+.screen-content {
+    height: 100%;
+    display: flex;
+    gap: 40px;
+    padding: 20px;
+    align-items: flex-start;
+}
+
+.folder {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.folder-icon {
+    font-size: 3rem;
+}
+
+.folder-name {
+    font-size: 0.8rem;
+    color: #ffffff;
+    margin-top: 5px;
+    font-family: 'Courier New', monospace;
+}
+
+/* La fenêtre qui apparaît au survol */
+.folder-window {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    width: 250px;
+    background: rgba(20, 20, 20, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.folder:hover .folder-window {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    pointer-events: auto;
+}
+
+.folder-window h4 {
+    margin: 0 0 15px 0;
+    font-size: 1rem;
+    color: #ff7800; /* Rappel de la couleur chaude */
+    border-bottom: 1px solid rgba(255, 120, 0, 0.3);
+    padding-bottom: 5px;
+}
+
+.folder-window ul {
+    list-style: none;
+    padding: 0;
+}
+
+.folder-window li {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #ccc;
+}
+
+.folder-window li::before {
+    content: "> ";
+    color: #ff7800;
+}
+
+.warm-glow {
+    position: absolute;
+    top: 45%; /* Ajusté pour être bien derrière l'écran */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1400px;  /* Largeur de l'éclat */
+    height: 1000px; /* Hauteur de l'éclat */
+    
+    /* On utilise un orange plus saturé avec une opacité plus forte */
+    background: radial-gradient(circle, rgba(255, 120, 0, 0.4) 0%, rgba(255, 60, 0, 0.1) 50%, rgba(0, 0, 0, 0) 80%);
+    
+    /* Le secret de l'éclat est ici : un gros flou */
+    filter: blur(80px); 
+    z-index: 0;
+    
+    /* Animation optionnelle pour que l'éclat "respire" */
+    animation: pulseGlow 4s infinite alternate;
+}
+
+@keyframes pulseGlow {
+    from { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+
+
+
+
+
+
+
+
+
+
+.experience {
+    padding: 10px 5%;
+    background-color: #1a1a1a;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    background: linear-gradient(to right, #ff7800, #ffba00); /* Orange vers Jaune */
+    -webkit-background-clip: text; /* Coupe le fond pour qu'il ne reste que sur les lettres */
+    -webkit-text-fill-color: transparent; /* Rend la couleur de base transparente pour voir le fond */
+}
+
+/* La ligne verticale */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px; /* Aligné avec le centre des emojis */
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, #ff7800, rgba(255, 120, 0, 0.1));
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    padding-left: 60px; /* Espace pour laisser place à la ligne et l'emoji */
+}
+
+/* Le rond avec l'emoji */
+.timeline-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 42px;
+    height: 42px;
+    background: #111;
+    border: 2px solid #ff7800;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-icon {
+    transform: scale(1.2) rotate(10deg);
+    box-shadow: 0 0 20px rgba(255, 120, 0, 0.4);
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    color: #ff7800;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 120, 0, 0.3);
+    transform: translateX(10px); /* Léger décalage vers la droite au survol */
+}
+
+.timeline-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.timeline-content h4 {
+    font-size: 0.95rem;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: #bbb;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+
+
+
+
+
+
+
+
+
+
+.wheel-section {
+    padding: 50px 15%;
+    height: 200vh;
+    background: #050505;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    perspective: 2000px;
+}
+
+.wheel-instruction {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.wheel-container {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+}
+
+.wheel {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease-out;
+}
+
+.project-item {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    background: #111;
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    border: 1px solid rgba(255, 120, 0, 0.2);
+    backface-visibility: hidden; 
+}
+
+.project-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+    transition: all 0.5s ease;
+}
+
+.project-item img { width: 100%; height: 70%; object-fit: cover; }
+.project-info { padding: 15px; background: #000; height: 30%; }
+.project-title { color: #fff; font-weight: bold; margin: 0; }
+.project-subtitle { color: #888; font-size: 0.8rem; }
+
+
+ 
+
+
+
+
+
+.site-footer {
+    background-color: #0a0a0a;
+    padding: 100px 5% 40px 5%;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-container {
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+/* Structure du bas */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.footer-brand .logo-footer {
+    font-family: "Oi", serif;
+    font-size: 1.5rem;
+    font-weight: 100;
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    color: #888;
+    line-height: 1.5;
+}
+
+/* Navigation en colonnes */
+.footer-nav {
+    display: flex;
+    gap: 100px;
+}
+
+.nav-col h4 {
+    font-size: 0.8rem;
+    color: #555;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.nav-col a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-col a:hover {
+    color: #888;
+    transform: translateX(5px);
+}
+
+
+
+
+.social-icons-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Le lien qui contient l'icône */
+.social-icon-link {
+    display: block;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+    transform: scale(1);
+}
+
+/* L'image de l'icône elle-même */
+.social-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+/* --- EFFET AU SURVOL (:hover) --- */
+
+.social-icon-link:hover {
+    transform: scale(1.4); 
+    transform: scale(1.2) translateY(-3px);
+}
+
+.social-icon-link:hover .social-icon {
+    opacity: 1;
+}
+
+
+
+
+/* Barre de copyright tout en bas */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #444;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 20px;
+}
+
+/* Responsive pour tablettes et mobiles */
+@media (max-width: 768px) {
+    .footer-nav {
+        gap: 40px;
+        width: 100%;
+    }
+    .footer-content {
+        flex-direction: column;
+    }
+}
