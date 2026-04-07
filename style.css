@@ -587,7 +587,46 @@ header {
 
 
 
+/* Positionnement des tags */
+.project-tags {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
 
+/* Style de base des rectangles (tags) */
+.tag {
+    padding: 5px 10px;
+    border-radius: 4px; /* Rectangle avec angles très légèrement arrondis */
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+/* Couleurs spécifiques */
+.tag-type {
+    background-color: #ff4757; /* Rouge/Corail pour le type */
+}
+
+.tag-lang {
+    background-color: #f1c40f; /* Jaune pour le langage (couleur JS) */
+    color: #000; /* Texte noir pour contraste sur jaune */
+}
+
+.tag-year {
+    background-color: #2f3542; /* Gris foncé/Bleu nuit pour l'année */
+}
+
+/* Effet au survol de la carte pour faire ressortir les tags */
+.project-card:hover .tag {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
 
 
 

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Projet | Sudoku AI Solver</title>
+    <link rel="stylesheet" href="style-projets.css"> 
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oi&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <a href="index.html#projets" class="back-btn">← Accueil</a>
+
+    <header class="project-hero">
+        <span class="tag">Deep Learning</span>
+        <h1>Sudoku AI Solver</h1>
+    </header>
+
+    <div class="project-skills">
+        <div class="skills-wrapper">
+            <span class="skill-badge code">Python (TensorFlow)</span>
+            <span class="skill-badge code">OpenCV</span>
+            <span class="skill-badge code">NumPy</span>
+
+            <span class="skill-badge team">Computer Vision</span>
+            <span class="skill-badge team">CNN (Neural Networks)</span>
+            <span class="skill-badge team">Traitement d'Image</span>
+
+            <span class="skill-badge ia">Backtracking</span>
+            <span class="skill-badge ia">Logique Algorithmique</span>
+            <span class="skill-badge ia">Data Augmentation</span>
+        </div>
+    </div>
+
+    <div class="tech-grid">
+        <div class="tech-item"><span>Outils</span><strong>TensorFlow / Keras</strong></div>
+        <div class="tech-item"><span>Année</span><strong>2025</strong></div>
+        <div class="tech-item"><span>Type</span><strong>Projet Perso</strong></div>
+    </div>
+
+    <main class="container">
+        <h2>Le Concept</h2>
+        <p>
+            L'objectif de ce projet était de concevoir un système capable de résoudre n'importe quelle grille de Sudoku à partir d'une image ou d'une capture numérique. 
+            Ce projet articule deux piliers majeurs : la <strong>Vision par Ordinateur</strong> pour la lecture des chiffres et l'<strong>Intelligence Algorithmique</strong> pour la résolution logique de la grille.
+        </p>
+        
+        <img src="images/sudoku-preview.png" class="project-image" alt="Aperçu du solver de Sudoku">
+
+        <h2>Réalisation</h2>
+        <ul>
+            <li><strong>Reconnaissance de Chiffres (OCR) :</strong> Entraînement d'un réseau de neurones convolutif (CNN) via <strong>TensorFlow</strong> sur le dataset MNIST pour identifier les chiffres avec une précision de plus de 99%.</li>
+            <li><strong>Traitement d'image (OpenCV) :</strong> Implémentation d'un pipeline de détection : seuillage adaptatif, détection de contours et transformation de perspective pour isoler la grille et ses cellules.</li>
+            <li><strong>Algorithme de Résolution :</strong> Développement d'un moteur de résolution basé sur le <strong>Backtracking</strong>, capable de trouver la solution d'une grille complexe en quelques millisecondes.</li>
+            <li><strong>Intégration Python :</strong> Création d'un script fluide faisant le pont entre la prédiction du modèle IA et la structure de données matricielle (NumPy) envoyée au solver.</li>
+        </ul>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-line"></div>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-footer">VALENTIN</div>
+                <p>Étudiant Ingénieur à <br> l'ESIEA Laval</p>
+            </div>
+            
+            <div class="footer-nav">
+                <div class="nav-col">
+                    <h4>MENU</h4>
+                    <a href="index.html">Accueil</a>
+                </div>
+                <div class="nav-col">
+                    <h4>SOCIAL</h4>
+                    <div class="social-icons-container">
+                        <a href="https://www.linkedin.com/in/valentin-magnye-1b59752b7" target="_blank" class="social-icon-link">
+                            <img src="images/lin.svg" alt="LinkedIn" class="social-icon">
+                        </a>
+                        <a href="https://github.com/Xeyna77" target="_blank" class="social-icon-link">
+                            <img src="images/git.png" alt="GitHub" class="social-icon">
+                        </a>
+                        <a href="https://www.instagram.com/valou_mgy?igsh=dGM4bWk4OXVtdjky" target="_blank" class="social-icon-link">
+                            <img src="images/ins.png" alt="Instagram" class="social-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2024 Valentin Magnye</p>
+            <p>Fait à la main / 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>
