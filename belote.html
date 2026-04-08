@@ -105,6 +105,24 @@
             </div>
         </footer>
 
+    <script>
+        let keysPressed = [];
+        const secretCode = 'crackito'; // Tape "crackito" au clavier
+
+        window.addEventListener('keydown', (e) => {
+            keysPressed.push(e.key.toLowerCase());
+            keysPressed = keysPressed.slice(-secretCode.length);
+
+            if (keysPressed.join('') === secretCode) {
+                // Remplace TOUT le texte de la page
+                document.querySelectorAll('h1, h2, h3, p, span, a, strong').forEach(el => {
+                    el.innerText = "Crackito";
+                });
+                console.log("Easter Egg activé !");
+            }
+        });
+    </script>
+
 
 </body>
 </html>
