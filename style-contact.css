@@ -95,10 +95,56 @@
     transform: translateY(-5px);
 }
 
-/* Responsive */
+/* --- RESPONSIVE CONTACT --- */
 @media (max-width: 768px) {
+    /* Passage de la grille à une seule colonne */
     .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+        margin-top: 20px;
+    }
+
+    /* Centrage des textes d'info */
+    .contact-info {
+        text-align: center;
+    }
+
+    /* Ajustement des liens sociaux pour mobile */
+    .social-links {
+        align-items: center;
+        gap: 20px;
+    }
+
+    .social-links a {
+        font-size: 1rem;
+    }
+
+    .social-links a:hover {
+        padding-left: 0; /* On annule le décalage sur mobile */
+        transform: scale(1.05);
+    }
+
+    /* Optimisation du formulaire */
+    .contact-form-wrapper {
+        padding: 30px 20px !important; /* Moins de padding interne */
+        border-radius: 15px;
+    }
+
+    .input-group label {
+        font-size: 0.7rem; /* Plus petit pour gagner de la place */
+    }
+
+    .input-group input, 
+    .input-group textarea {
+        font-size: 0.95rem;
+        padding: 10px 0;
+    }
+
+    /* Bouton d'envoi en pleine largeur sur mobile */
+    .submit-btn {
+        width: 100%;
+        padding: 15px 0;
+        font-size: 0.9rem;
+        margin-top: 10px;
     }
 }
