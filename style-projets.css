@@ -121,7 +121,6 @@ p {
 
 
 
-
 .site-footer {
     background-color: #0a0a0a;
     padding: 100px 5% 40px 5%;
@@ -234,16 +233,54 @@ p {
     padding-top: 20px;
 }
 
-/* Responsive pour tablettes et mobiles */
+
+/* --- RESPONSIVE PAGES PROJETS --- */
 @media (max-width: 768px) {
-    .footer-nav {
-        gap: 40px;
+    /* Bouton Retour */
+    .back-btn {
+        top: 15px;
+        left: 15px;
+        padding: 10px 15px;
+        font-size: 0.8rem;
+    }
+
+    /* Hero Section */
+    .project-hero {
+        height: auto;
+        padding: 100px 5% 30px 5%;
+    }
+    h1 { font-size: 2.2rem !important; }
+
+    /* Grille Technique (Fiche) */
+    .tech-grid {
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 25px 5%;
+    }
+    .tech-item {
+        flex: 1 0 40%; /* Deux colonnes sur mobile */
+    }
+
+    /* Contenu Principal */
+    .container {
+        padding: 30px 5%;
         width: 100%;
     }
-    .footer-content {
-        flex-direction: column;
+    h2 { font-size: 1.5rem; margin-top: 30px; }
+    p { font-size: 0.95rem; }
+
+    /* Badges de compétences */
+    .project-skills { padding: 10px 5%; }
+    .skills-wrapper { gap: 8px; }
+    .skill-badge {
+        padding: 6px 12px;
+        font-size: 0.7rem;
     }
+
+    /* Footer spécial projet */
+    .site-footer { padding: 60px 5% 20px 5%; }
 }
+
 
 .project-skills {
     padding: 20px 10%;
