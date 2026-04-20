@@ -299,20 +299,92 @@ header {
     font-weight: 600; font-size: 20px;
 }
 
-@media (max-width : 678px) {
-    .container {
-        grid-template-rows: 50px 50px 50px 1fr
-        50px 50px 50px;
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-        "header"
-        "banner"
-        "main"
-        "low-content"
-        "footer";
+/* --- RESPONSIVE ACCUEIL --- */
+@media (max-width: 768px) {
+    /* Header & Navigation */
+    .header-content {
+        flex-direction: column;
+        height: auto;
+        padding: 5px 0;
     }
-}
+    .nav-links {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .nav-links a { font-size: 0.50rem; }
 
+    /* Bannière */
+    .main-title { font-size: 2.8rem !important; text-align: center; }
+    .banner-content:hover .main-title { transform: scale(1.1) !important; }
+
+    /* Profil (Carte) - On empile le Recto et le Verso */
+    .card-container { height: auto !important; perspective: none !important; width: 95vw; }
+    .card { transform: none !important; cursor: default; }
+    .card-front {
+        position: relative !important;
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 20px !important;
+    }
+    .photo-frame {
+        width: 150px !important;
+        height: 150px !important;
+        flex: none !important;
+        margin-bottom: 20px;
+    }
+    .text-content { flex: none !important; text-align: center; }
+    .card-back {
+        position: relative !important;
+        transform: none !important;
+        display: block !important;
+        margin-top: 15px;
+        height: auto !important;
+    }
+    .hobbies-mini-grid { grid-template-columns: 1fr !important; }
+
+    /* Compétences (Moniteur) */
+    .monitor-container { width: 100% !important; height: auto !important; }
+    .monitor { height: auto !important; border-width: 8px !important; }
+    .screen-content { flex-direction: column !important; gap: 15px !important; }
+    .folder-window {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        opacity: 1 !important;
+        width: 100% !important;
+        pointer-events: auto !important;
+        display: block !important;
+    }
+
+    /* Projets (Wheel) - Transformation en liste verticale */
+    .wheel-section { height: auto !important; padding: 50px 10px !important; }
+    .wheel-container { position: relative !important; height: auto !important; top: 0 !important; }
+    .wheel {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 25px;
+        transform: none !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+    .project-item {
+        position: relative !important;
+        width: 100% !important;
+        height: 420px !important;
+        left: 0 !important;
+        top: 0 !important;
+        transform: none !important;
+    }
+
+    /* Footer */
+    .footer-content { flex-direction: column !important; text-align: center; align-items: center; }
+    .footer-nav { gap: 30px !important; flex-direction: column; align-items: center; }
+    .social-icons-container { justify-content: center; }
+    .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+}
 
 
 
