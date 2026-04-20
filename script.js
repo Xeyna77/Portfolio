@@ -25,3 +25,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+function updateWheel() {
+    // On n'exécute le code de la roue QUE si on est sur un grand écran
+    if (window.innerWidth > 768) {
+        const scrollY = window.scrollY;
+        // ... (ton code actuel qui fait tourner la roue .style.transform = ...)
+    } else {
+        // Sur mobile, on reset les styles pour être sûr que le CSS prenne le dessus
+        const projects = document.querySelectorAll('.project-item');
+        projects.forEach(p => p.style.transform = 'none');
+    }
+}
+
+window.addEventListener('scroll', updateWheel);
